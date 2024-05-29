@@ -5,17 +5,17 @@ const path = require('path');
 // Configuración
 const config = {
     numberOfCards: 100, // Número de cartones a generar
-    imageUrl: './logo2.png', // Ruta a la imagen que deseas usar
+    imageUrl: './logo.png', // Ruta a la imagen que deseas usar
     borderColor: [1, 53, 173], // Color de los bordes en formato RGB
     bingoBgColor: [1, 53, 173], // Color de fondo para la palabra BINGO en formato RGB
     bingoColor: [255, 255, 255], // Color de la palabra BINGO en formato RGB
     pageSize: 'A4', // Tamaño de la página: 'A4' o 'Letter'
-    letterFontSize: 48, // Tamaño de las letras "BINGO"
-    numberFontSize: 48, // Tamaño de los números
-    marginTop: 50, // Margen superior
-    marginBottom: 50, // Margen inferior
-    marginLeft: 50, // Margen izquierdo
-    marginRight: 50, // Margen derecho
+    letterFontSize: 56, // Tamaño de las letras "BINGO"
+    numberFontSize: 56, // Tamaño de los números
+    marginTop: 10, // Margen superior
+    marginBottom: 10, // Margen inferior
+    marginLeft: 10, // Margen izquierdo
+    marginRight: 10, // Margen derecho
 };
 
 async function generateBingoCard() {
@@ -124,7 +124,8 @@ async function createBingoCardPDF(cards, config) {
     }
 
     const pdfBytes = await pdfDoc.save();
-    fs.writeFileSync('bingo_cards2.pdf', pdfBytes);
+    fs.writeFileSync('bingo_cards.pdf', pdfBytes);
+    console.log("Listo")
 }
 
 (async () => {
